@@ -16,40 +16,45 @@
 
     ns2.ExplicitBinding = function ExplicitBinding(){
         //Private members
-        var testCall1 = function testCall1(){
-            return `${this.msgO} ${this.myVar1}`;
-        },
-        callDisplay1 = function callDisplay1(findElem, str){
-            $(findElem).append(`<li>jsExplicitBinding.testCall1.call(Gus.JS2.myObjVar1) = ${str} </li>`);
+        var testCall1 = function testCall1()
+            {
+                return `${this.msgO} ${this.myVar1}`;
+            },
+            callDisplay1 = function callDisplay1(findElem, str)
+            {
+                $(findElem).append(`<li>jsExplicitBinding.testCall1.call(Gus.JS2.myObjVar1) = ${str} </li>`);
+            },
+            callDisplay2 = function callDisplay2(findElem, str)
+            {
+                $(findElem).append(`<li>jsExplicitBinding.testCall1.call(Gus.JS2.myObjVar2) = ${str} </li>`);
+            },
+            testApply1 = function testApply1(msg)
+            {
+                return `${msg} ${this.msgO} ${this.myVar1}`;
+            },
+            testApply1Display1 = function testApply1Display1(findElem, str)
+            {
+                $(findElem).append(`<li>${str} </li>`);
+            },
+            testBind1 = function testBind1(msg)
+            {
+                return `${msg}  ${this.msgO} ${this.myVar1}`;
+            },
+            testBind1Display1 = function testBind1Display1(findElem, str)
+            {
+                $(findElem).append(`<li>${str} </li>`);
+            },
 
-        },
-        callDisplay2 = function callDisplay2(findElem, str){
-            $(findElem).append(`<li>jsExplicitBinding.testCall1.call(Gus.JS2.myObjVar2) = ${str} </li>`);
+            testmyObjLiteral1Display1 = function testmyObjLiteral1Display1(findElem, str)
+            {
+                $(findElem).append(`<li>myObjLiteral1.speak = ${str} </li>`);
+            },
 
-        },
-        testApply1 = function testApply1(msg){
-            return `${msg} ${this.msgO} ${this.myVar1}`;
-        },
-        testApply1Display1 = function testApply1Display1(findElem, str){
-            $(findElem).append(`<li>${str} </li>`);
-
-        },
-        testBind1 = function testBind1(msg){
-            return `${msg}  ${this.msgO} ${this.myVar1}`;
-        },
-        testBind1Display1 = function testBind1Display1(findElem, str){
-            $(findElem).append(`<li>${str} </li>`);
-
-        },
-
-        testmyObjLiteral1Display1 = function testmyObjLiteral1Display1(findElem, str){
-            $(findElem).append(`<li>myObjLiteral1.speak = ${str} </li>`);
-        },
-
-        testmyObjLiteral1Display2 = function testmyObjLiteral1Display2(findElem, obj) {
-            $(findElem).append(`<li>myObjLiteral2.speak call in another function = ${obj.speak()} </li>`);
-        };
-        
+            testmyObjLiteral1Display2 = function testmyObjLiteral1Display2(findElem, obj)
+            {
+                $(findElem).append(`<li>myObjLiteral2.speak call in another function = ${obj.speak()} </li>`);
+            };
+            
         //Public members 
         return {
             testCall1: testCall1,
