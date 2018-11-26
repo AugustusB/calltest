@@ -10,6 +10,7 @@
             "request": "launch",
             "name": "Launch Chrome against localhost1",
             "url": "http://localhost:8080",
+            "file": "${workspaceRoot}/indexcall.html",
             "runtimeArgs": [
                 "--allow-file-access-from-files"
  

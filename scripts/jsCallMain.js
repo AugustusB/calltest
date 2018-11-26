@@ -1,6 +1,12 @@
 "use strict"
 $(function(){
     try{
+        
+        var myObjVarReady1 = { myVar1: "v99", msgO: "this is bound to myObjVarReady1: "};
+        var myObjVarReady2 = { myVar1: "v100", msgO: "this is bound to myObjVarReady2: "};
+        var jsProtoFn1 = new Gus.JS2.ProtoFn(myObjVarReady1);
+        var jsProtoFn2 = new Gus.JS2.ProtoFn(myObjVarReady2);
+
         var jsExplicitBinding = new Gus.JS2.ExplicitBinding();
 
         var str = jsExplicitBinding.testCall1.call(Gus.JS2.myObjVar1);
@@ -25,6 +31,11 @@ $(function(){
         jsExplicitBinding.testmyObjLiteral1Display1('#objLiteral ol', str);
 
         jsExplicitBinding.testmyObjLiteral1Display2('#objLiteral ol', Gus.JS2.myObjLiteral1);
+
+        jsProtoFn1.testmyThis('#this ol');
+        jsProtoFn2.testmyThis('#this ol');
+        jsProtoFn1.testmyMsgThis('#this ol');
+        jsProtoFn2.testmyMsgThis('#this ol');
         
 
     }catch(error)
